@@ -10,8 +10,7 @@
     "build:lambda": "netlify-lambda build src/lambda",
     "dev:web": "poi --watch -r ts-node/register",
     "dev:lambda": "netlify dev",
-    "build:web": "poi --prod -r ts-node/register",
-    "build": "run-p build:*",
+    "build": "poi --prod -r ts-node/register",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
     "bootstrap": "netlify dev:exec node ./scripts/bootstrap-fauna-database.js",
     "dev": "run-p dev:*"
