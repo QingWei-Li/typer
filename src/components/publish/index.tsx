@@ -23,10 +23,7 @@ async function postData(data) {
   });
   if (isCreate) {
     localStorage.setItem(id, token);
-    prompt(
-      "Secret Edit Link. PLEASE DON'T SHARE",
-      `${location.href}${id}?token=${token}`
-    );
+    prompt("Secret Edit Link. PLEASE DON'T SHARE", `/${id}?token=${token}`);
   }
   location.href = `/${id}${data.inQuery ? `?token=${token}` : ""}`;
 }
