@@ -6,6 +6,7 @@ const db = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET });
 const q = faunadb.query;
 
 export async function handler(event) {
+  console.log(event);
   const guid = event.queryStringParameters.guid;
 
   if (!guid) {
