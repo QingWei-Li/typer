@@ -19,8 +19,8 @@
   to = "/assets/:splat"
 
 [[redirects]]
-  from = "/:guid"
-  to = "/.netlify/functions/render?guid=:guid"
+  from = "/*"
+  to = "/.netlify/functions/render?guid=:splat"
   status = 200
 
 [[headers]]
