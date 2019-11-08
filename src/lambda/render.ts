@@ -53,7 +53,7 @@ export async function handler(event) {
         top: 40px;
         background: #fff;
         border-radius: 16px;
-        border-color: #ddd;
+        border: 1px solid #ddd;
         color: #333;
         padding: 4px 20px;
         outline: none;
@@ -61,6 +61,14 @@ export async function handler(event) {
         font-family: inherit;
         line-height: 1.15;
         display: none;
+      }
+
+      @media screen and (max-width: 900px) {
+        .publish {
+            top: 10px;
+            right: 10px;
+            margin-right: 0;
+        }
       }
       </style>
     </head>
