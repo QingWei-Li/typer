@@ -14,7 +14,8 @@ export async function handler(event) {
       statusCode: 400,
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        message: "missing guid"
+        message: "missing guid",
+        origin: JSON.stringify(event)
       })
     };
   }
