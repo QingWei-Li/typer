@@ -1,0 +1,47 @@
+{
+  "name": "wen",
+  "productName": "文(Wen)",
+  "description": "ddd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build:lambda": "netlify-lambda build src/lambda",
+    "dev:web": "poi --watch -r ts-node/register",
+    "dev:lambda": "netlify dev",
+    "build:web": "poi --prod -r ts-node/register",
+    "build": "run-p build:*",
+    "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
+    "bootstrap": "netlify dev:exec node ./scripts/bootstrap-fauna-database.js",
+    "dev": "run-p dev:*"
+  },
+  "devDependencies": {
+    "@types/codemirror": "^0.0.80",
+    "@types/poi": "^12.5.0",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "netlify-cli": "^2.20.2",
+    "npm-run-all": "^4.1.5",
+    "poi": "^12.7.3",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "codemirror": "^5.49.2",
+    "faunadb": "^2.9.3",
+    "is-json": "^2.0.1",
+    "marked": "^0.7.0",
+    "md5": "^2.2.1",
+    "netlify-lambda": "^1.6.3",
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.17.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "shimo-guid": "^1.0.2",
+    "store2": "^2.10.0"
+  }
+}

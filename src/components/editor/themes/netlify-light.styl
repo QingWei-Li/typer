@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500|Roboto+Mono')
+
+:root
+  --baseFontSize 18px
+  --fontFamilySans Roboto, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'
+  --fontFamilyMono 'Roboto Mono', monospace
+  --textColor rgba(14, 30, 37, 0.87)
+  --borderColor #e9ebeb
+  --accentColor #00ad9f
+
+.cm-s-netlify-light
+  font-family var(--fontFamilySans)
+  font-size var(--baseFontSize)
+  line-height 1.5
+  max-width 40em
+  padding 1em
+  margin auto
+  background white
+  color var(--textColor)
+  counter-reset example
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+
+  .cm-header
+    line-height 1.2
+    margin-top 1.5em
+    margin-bottom 0
+    font-weight 500
+
+  .cm-header-1
+    font-size 2em
+
+  .cm-header-2
+    font-size 1.375em
+    margin-top 3em
+
+  .cm-header-3
+    font-size 1.125em
+
+  .cm-link
+    color inherit
+    text-decoration underline
+
+  .cm-comment
+    font-family var(--fontFamilyMono)
+    font-size 14px
+
+  .cm-quote
+    font-style italic

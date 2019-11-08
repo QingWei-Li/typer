@@ -1,0 +1,19 @@
+# example netlify.toml
+[build]
+  command = "yarn build"
+  functions = "lambda" #  netlify-lambda reads this
+  publish = "dist"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/render?guid=:splat"
+  status = 200
