@@ -22,6 +22,7 @@
   from = "/:guid"
   to = "/.netlify/functions/render?guid=:guid"
   status = 200
+  force = true
 
 [[headers]]
   for = "*.js" 

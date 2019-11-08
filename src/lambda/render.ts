@@ -7,6 +7,16 @@ const q = faunadb.query;
 
 export async function handler(event) {
   const guid = event.queryStringParameters.guid;
+
+  if (!guid) {
+    return {
+      statusCode: 400,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        message: "missing guid"
+      })
+    };
+  }
   const { data } = await db.query(q.Get(q.Match(q.Index("posts_by_id"), guid)));
 
   return {
