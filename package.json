@@ -33,6 +33,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "codemirror": "^5.49.2",
+    "encoding": "^0.1.12",
     "faunadb": "^2.9.3",
     "is-json": "^2.0.1",
     "marked": "^0.7.0",
