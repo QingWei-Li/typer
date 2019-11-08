@@ -12,8 +12,8 @@ export async function handler(event) {
   return {
     statusCode: 200,
     headers: {
-      "content-type": "text/html",
-      "Cache-Control": "public, max-age=600"
+      "content-type": "text/html"
+      // "Cache-Control": "public, max-age=600"
     },
     body: `<!doctype html>
     <html>

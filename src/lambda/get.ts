@@ -11,7 +11,10 @@ export async function handler(event) {
     statusCode: 200,
     headers: { "content-type": "application/json" },
     body: JSON.stringify({
-      data
+      data: {
+        id: data.id,
+        body: data.body
+      }
     })
   };
 }
