@@ -19,17 +19,26 @@ export async function handler(event) {
   }
   const { data } = await db.query(q.Get(q.Match(q.Index("posts_by_id"), guid)));
 
+  const tokens = marked.lexer(data.body, {
+    gfm: true,
+    breaks: false,
+    highlight: function(code, lang) {
+      return Prism.highlight(code, Prism.languages[lang || "markup"]);
+    }
+  });
+  const title = tokens.find(t => t.type === "heading");
+  const body = marked.parser(tokens);
+
   return {
     statusCode: 200,
     headers: {
-      "content-type": "text/html",
-      "Cache-Control": "public, s-maxage=10, max-age=10"
+      "content-type": "text/html"
     },
     body: `<!doctype html>
     <html>
     <head>
       <meta charset="utf-8"/>
-      <title>Marked in the browser</title>
+      <title>${(title ? title.text : "Untitled") + " - Powered by Wen"}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Roboto+Mono" rel="stylesheet">
@@ -56,13 +65,7 @@ export async function handler(event) {
       </style>
     </head>
     <body>
-      ${marked(data.body, {
-        gfm: true,
-        breaks: false,
-        highlight: function(code, lang) {
-          return Prism.highlight(code, Prism.languages[lang || "markup"]);
-        }
-      })}
+      ${body}
       <a id="edit" class="publish" href="/${data.id}/edit">Edit</a>
     </body>
     <script>
