@@ -6,16 +6,14 @@ const db = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET });
 const q = faunadb.query;
 
 export async function handler(event) {
-  console.log(event);
-  const guid = event.queryStringParameters.guid;
+  const guid = event.queryStringParameters.guid || event.path.replace("/", "");
 
   if (!guid) {
     return {
       statusCode: 400,
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        message: "missing guid",
-        origin: JSON.stringify(event)
+        message: "missing guid"
       })
     };
   }
