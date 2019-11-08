@@ -77,9 +77,14 @@ export async function handler(event) {
       <a id="edit" class="publish" href="/${data.id}/edit">Edit</a>
     </body>
     <script>
-      var token = localStorage.getItem("${data.id}")
+      var m = location.search.match(/token=(\\w+)/)
+      var token = m ? m[1] : localStorage.getItem("${data.id}")
       if (token) {
-        document.getElementById("edit").style.display = "block"
+        var edit = document.getElementById("edit")
+        if (m) {
+          edit.href = "/${data.id}/edit?token=" + token
+        }
+        edit.style.display = "block"
       }
     </script>
     </html>`
