@@ -8,6 +8,7 @@ import { useEffect } from "react";
 export function Editor(
   props?: React.HTMLAttributes<HTMLDivElement> & {
     onChange: (val: string) => void;
+    initbody?: string;
   }
 ) {
   let refEditor: HTMLDivElement;
@@ -17,7 +18,8 @@ export function Editor(
       mode: "gfm",
       autofocus: true,
       theme: "netlify-light",
-      lineWrapping: true
+      lineWrapping: true,
+      value: props.initbody || ""
     });
 
     editor.on("change", () => {

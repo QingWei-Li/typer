@@ -41,7 +41,6 @@
     "prismjs": "^1.17.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "shimo-guid": "^1.0.2",
-    "store2": "^2.10.0"
+    "shimo-guid": "^1.0.2"
   }
 }

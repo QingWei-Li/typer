@@ -91,35 +91,6 @@ input {
   font-weight: bold;
 }
 
-button,
-.button {
-  box-sizing: border-box;
-  display: inline-block;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 0;
-  background: var(--accentColor);
-  color: white;
-  border-radius: 4px;
-  font-size: 1em;
-  font-weight: 500;
-  height: 2.5em;
-  line-height: 2.5;
-  padding: 0 1em;
-  min-width: 10em;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  transform: translateY(0);
-  transition: all 0.15s ease;
-}
-
-button:focus,
-button:hover {
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
-}
-
 form {
   max-width: 20em;
 }

@@ -30,8 +30,6 @@ export async function handler(event) {
       })
     )
     .then(res => {
-      console.log("success", res);
-
       return {
         statusCode: 200,
         headers: { "content-type": "application/json" },

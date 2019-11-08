@@ -11,7 +11,11 @@ export async function handler(event) {
 
   return {
     statusCode: 200,
-    headers: { "content-type": "text/html" },
+    headers: {
+      "content-type": "text/html",
+      "Cache-Control":
+        "public, s-maxage=600, max-age=600, stale-while-revalidate=300"
+    },
     body: `<!doctype html>
     <html>
     <head>
@@ -21,6 +25,26 @@ export async function handler(event) {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Roboto+Mono" rel="stylesheet">
       <link rel="stylesheet" href="/assets/netlify-style.css">
+      <style>
+      .publish {
+        font-size: 16px;
+        border: 1px solid;
+        position: fixed;
+        right: 30%;
+        margin-right: -100px;
+        top: 40px;
+        background: #fff;
+        border-radius: 16px;
+        border-color: #ddd;
+        color: #333;
+        padding: 4px 20px;
+        outline: none;
+        text-decoration: none;
+        font-family: inherit;
+        line-height: 1.15;
+        display: none;
+      }
+      </style>
     </head>
     <body>
       ${marked(data.body, {
@@ -30,7 +54,14 @@ export async function handler(event) {
           return Prism.highlight(code, Prism.languages[lang || "markup"]);
         }
       })}
+      <a id="edit" class="publish" href="/${data.id}/edit">Edit</a>
     </body>
+    <script>
+      var token = localStorage.getItem("${data.id}")
+      if (token) {
+        document.getElementById("edit").style.display = "block"
+      }
+    </script>
     </html>`
   };
 }

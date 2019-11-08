@@ -3,16 +3,34 @@ import { render } from "react-dom";
 import React, { useState } from "react";
 import { Editor } from "./components/editor/index";
 import { Publish } from "./components/publish";
+import Axios from "axios";
 
-function App() {
-  const [body, setBody] = useState();
+function App(props: { body?: string; id?: string }) {
+  const [body, setBody] = useState(props.body);
 
   return (
     <main>
-      <Editor onChange={val => setBody(val)} />
-      <Publish data={body} />
+      <Editor initbody={body} onChange={val => setBody(val)} />
+      <Publish data={body} id={props.id} />
     </main>
   );
 }
 
-render(<App />, document.getElementById("app"));
+const guid = location.pathname.split("/")[1];
+
+if (guid) {
+  Axios("/.netlify/functions/get", {
+    params: {
+      guid: location.pathname.split("/")[1]
+    }
+  }).then(res => {
+    const data = res.data.data;
+
+    render(
+      <App body={data.body} id={data.id} />,
+      document.getElementById("app")
+    );
+  });
+} else {
+  render(<App />, document.getElementById("app"));
+}
