@@ -13,8 +13,7 @@ export async function handler(event) {
     statusCode: 200,
     headers: {
       "content-type": "text/html",
-      "Cache-Control":
-        "public, s-maxage=600, max-age=600, stale-while-revalidate=300"
+      "Cache-Control": "public, max-age=600"
     },
     body: `<!doctype html>
     <html>
