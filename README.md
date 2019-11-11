@@ -1,4 +1,4 @@
-# Typer
+# Typer 
 
 > ✍️ A simplified publishing tool
 > https://typer.ink
@@ -22,3 +22,20 @@ yarn dev
 # Open URL
 open http://localhost:8888
 ```
+
+## Inspired
+
+- https://telegra.ph/
+- https://github.com/zeit/static-fun
+- https://github.com/philhawksworth/virtual-lolly
+
+
+## TODO
+
+- [] Help document
+- [] Image upload
+- [] Support mobile
+  
+## License
+
+MIT
