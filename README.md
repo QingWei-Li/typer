@@ -32,9 +32,9 @@ open http://localhost:8888
 
 ## TODO
 
-- [] Help document
-- [] Image upload
-- [] Support mobile
+- [ ] Help document
+- [ ] Image upload
+- [ ] Support mobile
   
 ## License
 
