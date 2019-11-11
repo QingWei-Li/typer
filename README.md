@@ -1,6 +1,9 @@
 # Typer
 
-> A simplified publishing tool
+> ✍️ A simplified publishing tool
+> https://typer.ink
+
+
 
 ## Development
 
