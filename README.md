@@ -1,6 +1,6 @@
-# Wen
+# Typer
 
-
+> A simplified publishing tool
 
 ## Development
 

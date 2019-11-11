@@ -1,7 +1,7 @@
 {
-  "name": "wen",
-  "productName": "文(Wen)",
-  "description": "ddd",
+  "name": "typer",
+  "productName": "Typer",
+  "description": "A simplified publishing tool",
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
