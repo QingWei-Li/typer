@@ -17,6 +17,7 @@ export async function handler(event) {
       })
     };
   }
+
   const { data } = await db.query(q.Get(q.Match(q.Index("posts_by_id"), guid)));
   const tokens = marked.lexer(data.body);
   const title = tokens.find(t => t.type === "heading");
@@ -44,7 +45,9 @@ export async function handler(event) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Roboto+Mono" rel="stylesheet">
-      <link rel="stylesheet" href="/assets/netlify-style.css">
+      <link rel="stylesheet" href="/static/netlify-style.css">
+      <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+
       <style>
       .publish {
         font-size: 16px;

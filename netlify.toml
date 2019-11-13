@@ -6,7 +6,7 @@
 
 [[redirects]]
   from = "/"
-  to = "/index.html"
+  to = "/static/index.html"
   status = 200
 
 [[redirects]]
@@ -15,21 +15,8 @@
   status = 200
 
 [[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-
-[[redirects]]
-  from = "/favicon.ico"
-  to = "/favicon.ico"
-  status = 200
-
-[[redirects]]
-  from = "/manifest.json"
-  to = "/manifest.json"
-
-[[redirects]]
-  from = "/service-worker.js"
-  to = "/service-worker.js"
+  from = "/static/*"
+  to = "/static/:splat"
 
 [[redirects]]
   from = "/*"
