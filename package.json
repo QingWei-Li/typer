@@ -17,6 +17,7 @@
     "dev": "run-p dev:*"
   },
   "devDependencies": {
+    "@poi/plugin-pwa": "^12.0.3",
     "@types/codemirror": "^0.0.80",
     "@types/poi": "^12.5.0",
     "@types/react": "^16.9.11",
@@ -43,6 +44,7 @@
     "qss": "^2.0.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "register-service-worker": "^1.6.2",
     "shimo-guid": "^1.0.2"
   }
 }

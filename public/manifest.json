@@ -1,0 +1,9 @@
+{
+  "name": "Typer",
+  "short_name": "Typer",
+  "theme_color": "#fff",
+  "msTileColor": "#000000",
+  "appleMobileWebAppCapable": "no",
+  "appleMobileWebAppStatusBarStyle": "default",
+  "assetsVersion": ""
+}

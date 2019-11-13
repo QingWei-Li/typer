@@ -1,3 +1,9 @@
+import { register } from "register-service-worker";
+
+if (process.env.NODE_ENV === "production") {
+  register(process.env.PUBLIC_URL + "service-worker.js");
+}
+
 import "normalize.css";
 import { render } from "react-dom";
 import React, { useState } from "react";

@@ -24,6 +24,14 @@
   status = 200
 
 [[redirects]]
+  from = "/manifest.json"
+  to = "/manifest.json"
+
+[[redirects]]
+  from = "/service-worker.js"
+  to = "/service-worker.js"
+
+[[redirects]]
   from = "/*"
   to = "/.netlify/functions/render?guid=:splat"
   status = 200
