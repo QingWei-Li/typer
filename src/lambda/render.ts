@@ -18,16 +18,18 @@ export async function handler(event) {
     };
   }
   const { data } = await db.query(q.Get(q.Match(q.Index("posts_by_id"), guid)));
-
-  const tokens = marked.lexer(data.body, {
+  const tokens = marked.lexer(data.body);
+  const title = tokens.find(t => t.type === "heading");
+  const body = marked.parser(tokens, {
     gfm: true,
     breaks: false,
-    highlight: function(code, lang) {
-      return Prism.highlight(code, Prism.languages[lang || "markup"]);
+    highlight: (code, lang) => {
+      return Prism.highlight(
+        code,
+        Prism.languages[lang] || Prism.languages.markup
+      );
     }
   });
-  const title = tokens.find(t => t.type === "heading");
-  const body = marked.parser(tokens);
 
   return {
     statusCode: 200,
