@@ -19,13 +19,15 @@ export function Editor(
       autofocus: true,
       theme: "netlify-light",
       lineWrapping: true,
-      value: props.initbody || ""
+      value: props.initbody || "",
+      viewportMargin: Infinity
     });
 
     editor.on("change", () => {
       props.onChange(editor.getValue());
     });
   }, []);
+  const { initbody, ...attrs } = props;
 
-  return <div {...props} ref={r => (refEditor = r)} className="editor"></div>;
+  return <div {...attrs} ref={r => (refEditor = r)} className="editor"></div>;
 }
