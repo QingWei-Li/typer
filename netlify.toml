@@ -19,6 +19,10 @@
   to = "/assets/:splat"
 
 [[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.ico"
+
+[[redirects]]
   from = "/*"
   to = "/.netlify/functions/render?guid=:splat"
   status = 200
