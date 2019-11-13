@@ -3,7 +3,7 @@
 > ✍️ A simplified publishing tool
 > https://typer.ink
 
-
+- [帮助文档](https://typer.ink/welcome)
 
 ## Development
 
@@ -32,7 +32,7 @@ open http://localhost:8888
 
 ## TODO
 
-- [ ] Help document
+- [x] Help document
 - [ ] Image upload
 - [ ] Support mobile
   

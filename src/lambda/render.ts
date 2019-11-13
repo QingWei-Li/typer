@@ -71,11 +71,17 @@ export async function handler(event) {
             margin-right: 0;
         }
       }
+
+      footer {
+        text-align: center;
+        color: #aaa;
+      }
       </style>
     </head>
     <body>
       ${body}
       <a id="edit" class="publish" href="/${data.id}/edit">Edit</a>
+      <footer><a href="/welcome">&copy;Typer</a></footer>
     </body>
     <script>
       var m = location.search.match(/token=(\\w+)/)
