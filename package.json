@@ -40,7 +40,7 @@
     "md5": "^2.2.1",
     "netlify-lambda": "^1.6.3",
     "normalize.css": "^8.0.1",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.24.0",
     "qss": "^2.0.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
