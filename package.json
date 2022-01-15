@@ -36,7 +36,7 @@
     "encoding": "^0.1.12",
     "faunadb": "^2.9.3",
     "is-json": "^2.0.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "md5": "^2.2.1",
     "netlify-lambda": "^1.6.3",
     "normalize.css": "^8.0.1",
